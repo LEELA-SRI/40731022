@@ -58,7 +58,7 @@ def get_train_info(number):
     })
     train_data = get_train_details.json()
     print(train_data)
-    return render_template("train_det.html",train=train_data)
+    return render_template("train_details.html",train=train_data)
 
 
 if __name__ == '__main__':

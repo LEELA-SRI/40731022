@@ -1,0 +1,51 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+<div class="container">
+    <div class="row my-5 justify-content-center">
+          <div class="col-lg-6 mb-5">
+            <div class="card  border-0 shadow">
+                <div class="card-header bg-primary border-0">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title mb-2">
+                        <div class="d-inline-flex justify-content-center w-100">
+                            <i class="fas fa-train mr-2"></i>
+                            <div>
+                                &nbsp;&nbsp;&nbsp;{{ train['trainName'] }}
+                            </div>
+                        </div>
+                    </h4>
+                    <p class="card-text">
+                        <div class="">
+                          <span class="fw-bold" >Train Number : </span> &nbsp;{{ train['trainNumber'] }}
+                        </div>
+                    </p>
+                    <p class="card-text">
+                        <div class="">
+                            <span class="fw-bold">Departure Time : </span>&nbsp;{{ "{:02d}".format(train['departureTime']['Hours']) }}:{{ "{:02d}".format(train['departureTime']['Minutes']) }}:{{ "{:02d}".format(train['departureTime']['Seconds']) }}
+                        </div>
+                    </p>
+                    <p class="card-text">
+                        <div class="d-flex flex-column  ">
+                           <span class="fw-bold">Seats Available : </span>
+                            Sleeper : {{ train['seatsAvailable']['sleeper'] }} seats<br>
+                            AC : {{ train['seatsAvailable']['AC'] }} seats
+                        </div>
+                    </p>
+                    <p class="card-text">
+                        <div class="d-flex flex-column ">
+                          <span class="fw-bold">Price :</span> sleeper - &nbsp;Rs.{{ train['price']['sleeper'] }}<br>AC - &nbsp;Rs.{{ train['price']['AC'] }}
+                        </div>
+                    </p>
+                    <p class="card-text">
+                        <div class="">
+                           <span class="fw-bold">Delayed By : </span>&nbsp; {{ train['delayedBy'] }} minutes
+                        </div>
+                    </p>
+                  </div>
+              </div>
+          </div>     
+    </div>
+</div>
+{% endblock%}
