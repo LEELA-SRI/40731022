@@ -13,3 +13,16 @@
 
 
 ![Screenshot (66)](https://github.com/LEELA-SRI/40731022/assets/81609673/26beb50e-ee0d-47b0-8aca-b2c36758e919)
+
+2.Train API
+![image](https://github.com/LEELA-SRI/40731022/assets/81609673/e5f86da6-789b-4fa0-b8db-4acef060f29f)
+
+
+![Screenshot (71)](https://github.com/LEELA-SRI/40731022/assets/81609673/19e60ad0-acac-439d-816b-007b5e918a0f)
+
+
+![image](https://github.com/LEELA-SRI/40731022/assets/81609673/2b5f6590-2054-45c0-9ee5-017befa839e1)
+
+
+![image](https://github.com/LEELA-SRI/40731022/assets/81609673/68de0ab8-cfb8-40b7-859f-78567dedd482)
+
