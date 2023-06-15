@@ -1,6 +1,6 @@
 from flask import Flask,request,jsonify,render_template
 import requests
-import datetime
+
 
 app = Flask(__name__)
 
@@ -14,18 +14,9 @@ credentials = {
     "rollNo": "40731022"
     }
 
+
+
 def sort_key(train):
-    current_time = datetime.datetime.now()
-    departure_time = datetime.datetime(
-        year=current_time.year,
-        month=current_time.month,
-        day=current_time.day,
-        hour=train["departureTime"]["Hours"],
-        minute=train["departureTime"]["Minutes"],
-        second=train["departureTime"]["Seconds"],
-    )
-    if departure_time <= current_time + datetime.timedelta(minutes=30):
-        return float("inf")
     return (
         train["trainNumber"],
         -train["seatsAvailable"]["sleeper"],
@@ -39,7 +30,7 @@ def sort_key(train):
 
 @app.route('/trains', methods=['GET'])
 def get_trains():
-
+    import datetime
     
     post_req = requests.post(url, json=credentials)
     post_req_response =post_req.json()
@@ -51,6 +42,9 @@ def get_trains():
 
     trains_data = get_trains.json()
     sorted_trains_data = sorted(trains_data, key=sort_key)
+   
+    
+
     return render_template('trains.html',sorted_trains_data=sorted_trains_data)
 
 @app.route('/trains/<int:number>')
